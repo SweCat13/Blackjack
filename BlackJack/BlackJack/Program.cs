@@ -16,6 +16,7 @@ namespace BlackJack
             if (strStartGame = "y")
             { }
 
+            Console.WriteLine("This sucks so much that i can feel my... ");
 
         }
     }
