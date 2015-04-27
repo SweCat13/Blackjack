@@ -33,15 +33,28 @@ namespace BlackJack
                    iArrPlayerCards[i] = prg.AssignPlayerCard(rDealer, iArrPlayerCards[i]);
                    Console.WriteLine(iArrPlayerCards[i]);
 
+<<<<<<< HEAD
                   
+=======
+                   iArrplayerCards[i] = iRandomPCard;
+                   Console.WriteLine(iArrplayerCards[i]);
+
+>>>>>>> origin/master
                }
-            }             
+            }
+
+            int siffra = 0;
+            for (int r = 0; r < iArrplayerCards.Length; r++ )
+            {
+                siffra = iArrDealerCards[r] + siffra; 
+            }
         }
 
         public int AssignDealerCard(Random rand, int iCard)
         {
             iCard = rand.Next(1, 10);
             return iCard;
+<<<<<<< HEAD
         }
 
         public int AssignPlayerCard(Random randP, int iCardP)
@@ -50,5 +63,10 @@ namespace BlackJack
             return iCardP; 
         }
            
+=======
+        }             
+          
+        
+>>>>>>> origin/master
     }
 }
