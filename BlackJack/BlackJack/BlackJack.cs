@@ -37,8 +37,15 @@ namespace BlackJack
 
                    iArrplayerCards[i] = iRandomPCard;
                    Console.WriteLine(iArrplayerCards[i]);
+
                }
-            }             
+            }
+
+            int siffra = 0;
+            for (int r = 0; r < iArrplayerCards.Length; r++ )
+            {
+                siffra = iArrDealerCards[r] + siffra; 
+            }
         }
 
         public int AssignDealerCard(Random rand, int iCard)
@@ -46,6 +53,7 @@ namespace BlackJack
             iCard = rand.Next(1, 10);
             return iCard;
         }             
-           
+          
+        
     }
 }
