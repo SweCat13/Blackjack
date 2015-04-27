@@ -12,10 +12,8 @@ namespace BlackJack
         
             Random rPlayer = new Random();
             Random rDealer = new Random();
-            int iRandomDCard = 0;
-            int iRandomPCard = 0;
             int[] iArrDealerCards = new int[10];
-            int[] iArrplayerCards = new int[10];
+            int[] iArrPlayerCards = new int[10];
             Program prg = new Program();
 
             Console.WriteLine("Play Black Jack");
@@ -28,15 +26,14 @@ namespace BlackJack
                for (int i = 0; i < 2; i++)
                {
                    
-                   iRandomDCard = rDealer.Next(1, 10);
+                   
                    iArrDealerCards[i] = prg.AssignDealerCard(rDealer, iArrDealerCards[i]);
                    Console.WriteLine(iArrDealerCards[i]);
 
-                   
-                   iRandomPCard = rPlayer.Next(1, 10);
+                   iArrPlayerCards[i] = prg.AssignPlayerCard(rDealer, iArrPlayerCards[i]);
+                   Console.WriteLine(iArrPlayerCards[i]);
 
-                   iArrplayerCards[i] = iRandomPCard;
-                   Console.WriteLine(iArrplayerCards[i]);
+                  
                }
             }             
         }
@@ -45,7 +42,13 @@ namespace BlackJack
         {
             iCard = rand.Next(1, 10);
             return iCard;
-        }             
+        }
+
+        public int AssignPlayerCard(Random randP, int iCardP)
+        {
+            iCardP = randP.Next(1, 10);
+            return iCardP; 
+        }
            
     }
 }
