@@ -9,38 +9,43 @@ namespace BlackJack
     {
         static void Main(string[] args)
         {
+        
+            Random rPlayer = new Random();
+            Random rDealer = new Random();
+            int iRandomDCard = 0;
+            int iRandomPCard = 0;
+            int[] iArrDealerCards = new int[10];
+            int[] iArrplayerCards = new int[10];
+            Program prg = new Program();
+
             Console.WriteLine("Play Black Jack");
             Console.WriteLine("Start the game by dealing cards? (y/n)");
             string strStartGame = Console.ReadLine();
 
-           
-                int[] iArrDealerCards = new int[10];
-                int[] iArrplayerCards = new int[10];
-                if (strStartGame == "y")
-                {
-                    for (int i = 0; i < 1; i++)
-                    {
-                        Random rDealer = new Random();
-                        int iRandomDCard = rDealer.Next(1, 10);
-                        Console.WriteLine(iRandomDCard);
-
-                        iArrDealerCards[i] = iRandomDCard;
-
-                        Random rPlayer = new Random();
-                        int iRandomPCard = rPlayer.Next(1, 10);
-                        Console.WriteLine(iRandomPCard);
-
-                        iArrplayerCards[i] = iRandomPCard;
-                    }
-                }
-
-
-
-
+            if (strStartGame == "y")                                //spel-loop
+            {
             
+               for (int i = 0; i < 2; i++)
+               {
+                   
+                   iRandomDCard = rDealer.Next(1, 10);
+                   iArrDealerCards[i] = prg.AssignDealerCard(rDealer, iArrDealerCards[i]);
+                   Console.WriteLine(iArrDealerCards[i]);
 
-            
+                   
+                   iRandomPCard = rPlayer.Next(1, 10);
 
+                   iArrplayerCards[i] = iRandomPCard;
+                   Console.WriteLine(iArrplayerCards[i]);
+               }
+            }             
         }
+
+        public int AssignDealerCard(Random rand, int iCard)
+        {
+            iCard = rand.Next(1, 10);
+            return iCard;
+        }             
+           
     }
 }
