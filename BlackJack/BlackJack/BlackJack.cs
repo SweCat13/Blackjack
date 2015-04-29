@@ -15,6 +15,7 @@ namespace BlackJack
             int[] iArrDealerCards = new int[10];
             int[] iArrPlayerCards = new int[10];
             Program prg = new Program();
+            
 
             Console.WriteLine("Play Black Jack");
             Console.WriteLine("Start the game by dealing cards? (y/n)");
@@ -33,18 +34,13 @@ namespace BlackJack
                    iArrPlayerCards[i] = prg.AssignPlayerCard(rDealer, iArrPlayerCards[i]);
                    Console.WriteLine(iArrPlayerCards[i]);
 
-<<<<<<< HEAD
-                  
-=======
-                   iArrplayerCards[i] = iRandomPCard;
-                   Console.WriteLine(iArrplayerCards[i]);
 
->>>>>>> origin/master
+
                }
             }
 
             int siffra = 0;
-            for (int r = 0; r < iArrplayerCards.Length; r++ )
+            for (int r = 0; r < iArrPlayerCards.Length; r++ )
             {
                 siffra = iArrDealerCards[r] + siffra; 
             }
@@ -54,7 +50,7 @@ namespace BlackJack
         {
             iCard = rand.Next(1, 10);
             return iCard;
-<<<<<<< HEAD
+
         }
 
         public int AssignPlayerCard(Random randP, int iCardP)
@@ -62,11 +58,15 @@ namespace BlackJack
             iCardP = randP.Next(1, 10);
             return iCardP; 
         }
+
+         int Addition(int iPlayerCardOne, int iPlayerCardTwo)
+        {
+ 
+        }
            
-=======
+
         }             
           
-        
->>>>>>> origin/master
+       
     }
-}
+
