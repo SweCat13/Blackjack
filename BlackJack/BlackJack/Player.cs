@@ -18,7 +18,6 @@ namespace BlackJack
         public Player(string strUSer)
         {
             m_strUSer = strUSer;
-
         }
 
         public void GetUser()
