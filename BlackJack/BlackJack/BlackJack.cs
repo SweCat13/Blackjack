@@ -26,29 +26,46 @@ namespace BlackJack
             
                for (int i = 0; i < 2; i++)
                {
-                   
-                   
+
+
                    iArrDealerCards[i] = prg.AssignDealerCard(rDealer, iArrDealerCards[i]);
                    Console.WriteLine(iArrDealerCards[i]);
+                   
 
                    iArrPlayerCards[i] = prg.AssignPlayerCard(rDealer, iArrPlayerCards[i]);
-                   Console.WriteLine(iArrPlayerCards[i]);
+                   if (iArrPlayerCards[i] == 11)
+                   {
+                       Console.WriteLine("Knekt");
+                   }
 
-
+                   else if (iArrPlayerCards[i] == 12)
+                   {
+                       Console.WriteLine("Dam");
+                   }
+                   else if (iArrPlayerCards[i] == 13)
+                   {
+                       Console.WriteLine("Kung");
+                   }
+                   else
+                   {
+                       Console.WriteLine(iArrPlayerCards[i]);
+                   }
 
                }
             }
 
             int siffra = 0;
-            for (int r = 0; r < iArrPlayerCards.Length; r++ )
+            for (int r = 0; r < iArrPlayerCards.Length; r++ ) 
             {
                 siffra = iArrDealerCards[r] + siffra; 
             }
         }
 
+
+
         public int AssignDealerCard(Random rand, int iCard)
         {
-            iCard = rand.Next(1, 10);
+            iCard = rand.Next(1, 14);
             return iCard;
 
         }
@@ -57,11 +74,6 @@ namespace BlackJack
         {
             iCardP = randP.Next(1, 10);
             return iCardP; 
-        }
-
-         int Addition(int iPlayerCardOne, int iPlayerCardTwo)
-        {
- 
         }
            
 
