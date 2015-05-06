@@ -9,13 +9,21 @@ namespace BlackJack
     {
         static void Main(string[] args)
         {
+
+            
+
             Random rPlayer = new Random();
             Random rDealer = new Random();
             int[] iArrDealerCards = new int[10];
             int[] iArrPlayerCards = new int[10];
             Program prg = new Program();
             int iSumHandOne = 0;
-            int iSumhandTwo = 0; 
+            int iSumhandTwo = 0;
+            string strPlayersName = string.Empty;
+
+            Console.WriteLine("Enter Name ");
+            strPlayersName = Console.ReadLine();
+            prg.PlayersNamn(strPlayersName);
 
             Console.WriteLine("Play Black Jack\n Start the game by dealing cards? (y/n)");
             string strStartGame = Console.ReadLine();
@@ -95,9 +103,16 @@ namespace BlackJack
         public int CalcHands(int[] iInputSum) //summerar dealer eller player hand
         {
             return 0;
+        } 
+
+        void PlayersNamn(string strName) //Namn på spelaren
+        {
+            Console.WriteLine("Hello, " + strName);
+            
+            
         }
            
-
+        
     }             
           
        

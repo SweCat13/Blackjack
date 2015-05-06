@@ -20,14 +20,14 @@ namespace BlackJack
             m_strUSer = strUSer;
         }
 
-        public void GetUser()
-        {
-            Console.WriteLine("Player: " + m_strUSer);
-        }
-
         public Player()
         {
             Console.WriteLine("Player Called");
+        }
+
+        public void GetUser()
+        {
+            Console.WriteLine("Player: " + m_strUSer);
         }
 
         ~Player()
