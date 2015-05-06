@@ -18,17 +18,17 @@ namespace BlackJack
             int[] iArrPlayerCards = new int[10];
             Program prg = new Program();
             int iSumHandOne = 0;
-<<<<<<< HEAD
-            int iSumhandTwo = 0;
+
+    
             string strPlayersName = string.Empty;
 
             Console.WriteLine("Enter Name ");
             strPlayersName = Console.ReadLine();
             prg.PlayersNamn(strPlayersName);
-=======
-            int iSumhandTwo = 0; 
+
             
->>>>>>> origin/master
+            
+
 
             Console.WriteLine("Play Black Jack\n Start the game by dealing cards? (y/n)");
             string strStartGame = Console.ReadLine();
@@ -112,27 +112,25 @@ namespace BlackJack
         int iSumOne = 0; 
         public int CalcHands(int[] iInputSum) //summerar dealer eller player hand
         {
-<<<<<<< HEAD
-            return 0;
+            for (int i = 0; i < 2; i++)
+            {
+                if (iInputSum[i] > 10)               //beräknar alla tal över tio som tio
+                {
+                    iInputSum[i] = 10;
+                }
+
+                iSumOne = iSumOne + iInputSum[i];
+            }
+            return iSumOne;
+
+            
         } 
 
         void PlayersNamn(string strName) //Namn på spelaren
         {
             Console.WriteLine("Hello, " + strName);
             
-            
-=======
-            for (int i = 0; i < 2; i++)
-            {
-                if (iInputSum[i] > 10)               //beräknar alla tal över tio som tio
-                {
-                    iInputSum[i] = 10; 
-                }
 
-                iSumOne = iSumOne + iInputSum[i]; 
-            }
-                return iSumOne;
->>>>>>> origin/master
         }
            
         
