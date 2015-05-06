@@ -16,6 +16,7 @@ namespace BlackJack
             Program prg = new Program();
             int iSumHandOne = 0;
             int iSumhandTwo = 0; 
+            
 
             Console.WriteLine("Play Black Jack\n Start the game by dealing cards? (y/n)");
             string strStartGame = Console.ReadLine();
@@ -26,7 +27,7 @@ namespace BlackJack
                 {
                     
 
-                     iArrDealerCards[i] = prg.AssignDealerCard(rDealer, iArrDealerCards[i]); //hämtar slumpat kort och berättar vilket kort som finns för dealer
+                     iArrDealerCards[i] = prg.AssignDealerCard(rDealer, iArrDealerCards[i]); //anropar metod för att slumpa kort och berättar vilket kort som finns för dealer
                     
                         
                     if(iArrDealerCards[i] == 11)
@@ -47,7 +48,7 @@ namespace BlackJack
                     }
 
 
-                    iArrPlayerCards[i] = prg.AssignPlayerCard(rDealer, iArrPlayerCards[i]); //hämtar slumpat kort och berättar vilket kort som finns för player
+                    iArrPlayerCards[i] = prg.AssignPlayerCard(rDealer, iArrPlayerCards[i]); //anropar metod för att slumpa kort och berättar vilket kort som finns för player
                        
                     if (iArrPlayerCards[i] == 11)
                         {
@@ -66,35 +67,49 @@ namespace BlackJack
                             Console.WriteLine(iArrPlayerCards[i]);
                         }
                   
-                    iSumHandOne = prg.CalcHands(iArrPlayerCards[i]);
-
-                        
-
                     
                 }
 
+                iSumHandOne = prg.CalcHands(iArrDealerCards); //anropar metoden för att summera dealerns hand 
+                Console.WriteLine(iSumHandOne);
+
+                if (iSumHandOne < 17)
+                {
+
+ 
+                }
             }
         }
 
 
 
          
-        public int AssignDealerCard(Random rand, int iCard) //slumpar fram ett random kort
+        public int AssignDealerCard(Random rand, int iCard) //slumpar fram ett random kort för dealer
         {
             iCard = rand.Next(1, 14);
             return iCard;
 
         }
 
-        public int AssignPlayerCard(Random randP, int iCardP)
+        public int AssignPlayerCard(Random randP, int iCardP) //slumpar fram ett random kort för player
         {
-            iCardP = randP.Next(1, 10);
+            iCardP = randP.Next(1, 14);
             return iCardP; 
         }
 
+        int iSumOne = 0; 
         public int CalcHands(int[] iInputSum) //summerar dealer eller player hand
         {
-            return 0;
+            for (int i = 0; i < 2; i++)
+            {
+                if (iInputSum[i] > 10)               //beräknar alla tal över tio som tio
+                {
+                    iInputSum[i] = 10; 
+                }
+
+                iSumOne = iSumOne + iInputSum[i]; 
+            }
+                return iSumOne;
         }
            
 
