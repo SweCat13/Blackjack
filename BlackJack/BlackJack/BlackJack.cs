@@ -17,7 +17,8 @@ namespace BlackJack
             int[] iArrDealerCards = new int[10];
             int[] iArrPlayerCards = new int[10];
             Program prg = new Program();
-            int iSumHandOne = 0;
+            int iSumHandOne; 
+            int iSumHandTwo; 
 
     
             string strPlayersName = string.Empty;
@@ -54,6 +55,10 @@ namespace BlackJack
                     {
                         Console.WriteLine("Kung");
                     }
+                    else if (iArrDealerCards[i] == 14)
+                    {
+                        Console.WriteLine("Ess");
+                    }
                     else
                     {
                         Console.WriteLine(iArrDealerCards[i]);
@@ -74,6 +79,10 @@ namespace BlackJack
                         {
                             Console.WriteLine("Kung");
                         }
+                        else if (iArrPlayerCards[i] == 14)
+                       {
+                            Console.WriteLine("Ess");
+                       }
                         else
                         {
                             Console.WriteLine(iArrPlayerCards[i]);
@@ -82,8 +91,13 @@ namespace BlackJack
                     
                 }
 
-                iSumHandOne = prg.CalcHands(iArrDealerCards); //anropar metoden för att summera dealerns hand 
-                Console.WriteLine(iSumHandOne);
+                iSumHandOne = prg.CalcDhand(iArrDealerCards); //anropar metoden för att summera dealerns hand 
+                Console.WriteLine("Dealer sum: " + iSumHandOne);
+
+                iSumHandTwo = prg.CalcPhand(iArrPlayerCards); //anropar metoden för att summera playerns hand
+                Console.WriteLine("Player sum: " + iSumHandTwo);
+
+                
             }
         }
 
@@ -92,19 +106,19 @@ namespace BlackJack
          
         public int AssignDealerCard(Random rand, int iCard) //slumpar fram ett random kort för dealer
         {
-            iCard = rand.Next(1, 14);
+            iCard = rand.Next(2, 14);
             return iCard;
 
         }
 
         public int AssignPlayerCard(Random randP, int iCardP) //slumpar fram ett random kort för player
         {
-            iCardP = randP.Next(1, 14);
+            iCardP = randP.Next(2, 14);
             return iCardP; 
         }
 
-        int iSumOne = 0; 
-        public int CalcHands(int[] iInputSum) //summerar dealer eller player hand
+        int iSumOne;
+        public int CalcDhand(int[] iInputSum) //summerar dealer eller player hand
         {
             for (int i = 0; i < 2; i++)
             {
@@ -112,13 +126,37 @@ namespace BlackJack
                 {
                     iInputSum[i] = 10;
                 }
-
+                else if (iInputSum[i] == 14)  //beräknar alla ess (14) som 11
+                {  
+                    iSumOne = 11; 
+                }
+ 
                 iSumOne = iSumOne + iInputSum[i];
             }
             return iSumOne;
 
             
         } 
+
+        int iSumTwo;
+        public int CalcPhand(int[] iInputSum)
+        {
+            for (int i = 0; i < 2; i++)
+            {
+                if (iInputSum[i] > 10)
+                {
+                    iSumTwo = 10; 
+                }
+                else if (iInputSum[i] == 14)
+                {
+                    iSumTwo = 11; 
+                }
+
+                iSumTwo = iSumTwo + iInputSum[i]; 
+            }
+            return iSumTwo; 
+ 
+        }
 
         void PlayersNamn(string strName) //Namn på spelaren
         {
