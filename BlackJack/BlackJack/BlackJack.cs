@@ -84,12 +84,6 @@ namespace BlackJack
 
                 iSumHandOne = prg.CalcHands(iArrDealerCards); //anropar metoden för att summera dealerns hand 
                 Console.WriteLine(iSumHandOne);
-
-                if (iSumHandOne < 17)
-                {
-
- 
-                }
             }
         }
 

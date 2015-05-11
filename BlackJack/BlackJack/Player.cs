@@ -34,7 +34,5 @@ namespace BlackJack
         {
             Console.WriteLine("PLayer Destroyed");
         }
-
-
     }
 }
