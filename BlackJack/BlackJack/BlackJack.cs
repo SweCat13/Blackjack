@@ -84,11 +84,9 @@ namespace BlackJack
 
                 iSumHandOne = prg.CalcHands(iArrDealerCards); //anropar metoden för att summera dealerns hand 
                 Console.WriteLine(iSumHandOne);
+                prg.Bust(); //Kollar om dealern är busted
             }
         }
-
-
-
          
         public int AssignDealerCard(Random rand, int iCard) //slumpar fram ett random kort för dealer
         {
@@ -115,21 +113,22 @@ namespace BlackJack
 
                 iSumOne = iSumOne + iInputSum[i];
             }
-            return iSumOne;
+                return iSumOne;  
+        }
 
-            
-        } 
+        public void Bust() //metoden för dealer är bustad
+        {
+            if(iSumOne >= 22)
+            {
+                Console.WriteLine("You're busted, end of the game");
+            }
+        }
+
 
         void PlayersNamn(string strName) //Namn på spelaren
         {
             Console.WriteLine("Hello, " + strName);
-            
-
         }
-           
-        
-    }             
-          
-       
+    }                 
 }
 
