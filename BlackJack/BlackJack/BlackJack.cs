@@ -108,7 +108,7 @@ namespace BlackJack
         {
             for (int i = 0; i < 2; i++)
             {
-                if (iInputSum[i] > 10)               //beräknar alla tal över tio som tio
+                if (iInputSum[i] > 10)               //beräknar alla tal över tio som tio hfaha
                 {
                     iInputSum[i] = 10;
                 }
