@@ -96,7 +96,7 @@ namespace BlackJack
                 iSumHandOne = prg.CalcDhand(iArrDealerCards);   //Andropar metoden för att sumera dealerns hand
                 Console.WriteLine("Dealer sum: " + iSumHandOne);
 
-                iSumHandOne = prg.CalcPhand(iArrPlayerCards);   //Andropar metoden för att sumera players hand
+                iSumHandTwo = prg.CalcPhand(iArrPlayerCards);   //Andropar metoden för att sumera players hand
                 Console.WriteLine("Player sum: " + iSumHandTwo);
 
                 prg.Bust(); //Kolar om dealern är busted
@@ -124,7 +124,7 @@ namespace BlackJack
         {
             for (int i = 0; i < 2; i++)
             {
-                if (iInputSum[i] > 10)               //beräknar alla tal över tio som tio hfaha
+                if (iInputSum[i] > 10 && iInputSum[i] < 14)               //beräknar alla tal över tio som tio hfaha
                 {
                     iInputSum[i] = 10;
                 }
@@ -143,7 +143,7 @@ namespace BlackJack
         {
             for (int i = 0; i < 2; i++)
             {
-                if (iInputSum[i] > 10)               //beräknar alla tal över tio som tio hfaha
+                if (iInputSum[i] > 10 && iInputSum[i] < 14)               //beräknar alla tal över tio som tio 
                 {
                     iInputSum[i] = 10;
                 }
