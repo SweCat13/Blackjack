@@ -25,8 +25,9 @@ namespace BlackJack
 
             Console.WriteLine("Enter Name ");
             strPlayersName = Console.ReadLine();
+            Console.Clear();
             prg.PlayersNamn(strPlayersName);
-
+            
             
             
 
@@ -35,6 +36,7 @@ namespace BlackJack
             string strStartGame = Console.ReadLine();
 
             if (strStartGame == "y")                                //spel-loop
+            Console.Clear();
             {
                 for (int i = 0; i < 2; i++)
                 {
@@ -165,7 +167,7 @@ namespace BlackJack
 
         void PlayersNamn(string strName) //Namn på spelaren
         {
-            Console.WriteLine("Hello, " + strName);
+            Console.WriteLine("Hello, " + strName + "\n---------------------");
             
 
         }
